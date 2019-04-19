@@ -36,20 +36,4 @@ describe('NotFoundComponent', () => {
     expect(component).toBeTruthy();
     expect(fixture).toMatchSnapshot();
   });
-
-  it('should show not found link', fakeAsync(() => {
-    ngZone.run(() => {
-      // Arrange
-      const url = "/AaAaMv"
-      const spanUrlElement = fixture.debugElement.query(By.css('span[class=notfound_url]'));
-
-      // Act
-      router.navigate([url]);
-      tick();
-      fixture.detectChanges();
-
-      // Assert
-      expect(spanUrlElement.nativeElement.textContent).toBe(url);
-    });
-  }));
 });
