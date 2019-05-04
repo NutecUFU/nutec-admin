@@ -40,7 +40,7 @@ describe('NotFoundComponent', () => {
   it('should show not found link', fakeAsync(() => {
     ngZone.run(() => {
       // Arrange
-      const url = "/AaAaMv"
+      const url = '/AaAaMv';
       const spanUrlElement = fixture.debugElement.query(By.css('span[class=notfound_url]'));
 
       // Act
