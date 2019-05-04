@@ -1,7 +1,6 @@
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
-import { By } from '@angular/platform-browser';
 import { NgZone } from '@angular/core';
 
 import { NotFoundComponent } from './not-found.component';

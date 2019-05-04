@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'nutec-admin';
   ambiente: string;
 
-  constructor(){
+  constructor() {
     this.ambiente = environment.env;
   }
 }
