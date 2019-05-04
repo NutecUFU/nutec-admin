@@ -1,13 +1,11 @@
-<div class="container-fluid login">
-  <div class="row align-items-center justify-content-center">
-    <div class="col-12 col-md-5 col-lg-6 col-xl-4 px-lg-5 my-5">
+<div class="d-flex justify-content-center align-items-center h-100 login">
+  <app-card class="login__card" classes="card__border-top primary">
+    <div body>
       <h1 class="text-center mb-3">Sign in</h1>
-      <p class="text-muted text-center mb-5">Acesse seu painel.</p>
-
       <form>
         <div class="form-group">
           <label>Email</label>
-          <input type="email" class="form-control" placeholder="joao@email.com" />
+          <input type="email" class="form-control" placeholder="joao@email.com" required />
         </div>
 
         <div class="form-group">
@@ -16,18 +14,18 @@
               <label>Password</label>
             </div>
             <div class="col-auto">
-              <a href="password-reset-cover.html" class="form-text small text-muted">
+              <a href="#" class="form-text small text-muted">
                 Forgot password?
               </a>
             </div>
           </div>
           <div class="input-group input-group-merge">
-            <input type="password" class="form-control form-control-appended" placeholder="Enter your password">
-            <div class="input-group-append">
-              <span class="input-group-text">
-                <i class="far fa-eye"></i>
-              </span>
-            </div>
+            <input
+              type="password"
+              class="form-control form-control-appended"
+              placeholder="Enter your password"
+              required
+            >
           </div>
         </div>
 
@@ -41,11 +39,5 @@
         </p>
       </form>
     </div>
-    <div class="col-12 col-md-7 col-lg-6 col-xl-8 d-none d-lg-block login_background">
-      <div
-        class="bg-cover vh-100"
-        style="background-color: #bababa">
-      </div>
-    </div>
-  </div>
+  </app-card>
 </div>
