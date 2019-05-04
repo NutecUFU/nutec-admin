@@ -10,7 +10,13 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch --verbose=false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "pull-request-validator": "npm run lint && npm run test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run pull-request-validator"
+    }
   },
   "jest": {
     "preset": "jest-preset-angular",
