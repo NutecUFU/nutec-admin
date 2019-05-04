@@ -10,7 +10,13 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch --verbose=false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "pull-request-validator": "npm run lint && npm run test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run pull-request-validator"
+    }
   },
   "jest": {
     "preset": "jest-preset-angular",
@@ -44,13 +50,10 @@
     "@angular/cli": "~7.3.7",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
-    "@types/jasmine": "~2.8.8",
-    "@types/jasminewd2": "~2.0.3",
     "@types/jest": "^24.0.11",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
-    "jasmine-core": "~2.99.1",
-    "jasmine-spec-reporter": "~4.2.1",
+    "husky": "^2.2.0",
     "jest": "^24.7.1",
     "jest-extended": "^0.11.1",
     "jest-preset-angular": "^7.1.0",
