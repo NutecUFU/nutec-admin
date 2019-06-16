@@ -1,6 +1,5 @@
 import { NgZone } from '@angular/core';
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -35,20 +34,4 @@ describe('NotFoundComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should show not found link', fakeAsync(() => {
-    ngZone.run(() => {
-      // Arrange
-      const url = '/AaAaMv';
-      const spanUrlElement = fixture.debugElement.query(By.css('span[class=notfound_url]'));
-
-      // Act
-      router.navigate([url]);
-      tick();
-      fixture.detectChanges();
-
-      // Assert
-      expect(spanUrlElement.nativeElement.textContent).toBe(url);
-    });
-  }));
 });
