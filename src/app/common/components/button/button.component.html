@@ -1,0 +1,8 @@
+<button
+  class="btn align-items-center"
+  type="{{ type }}"
+  [ngClass]="classes"
+  [disabled]="disabled || isLoading"
+>
+  <ng-content></ng-content>
+</button>

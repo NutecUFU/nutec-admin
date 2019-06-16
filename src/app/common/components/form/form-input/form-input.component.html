@@ -1,0 +1,15 @@
+<div class="form-group">
+  <app-form-label
+    *ngIf="label"
+    [ngClass]="{'error': isInvalid}"
+    label="{{ label }}"
+  ></app-form-label>
+
+  <input
+    placeholder="{{ placeHolder }}"
+    class="form-control"
+    type="{{ typeInput || 'text' }}"
+  />
+
+  <ng-content></ng-content>
+</div>
