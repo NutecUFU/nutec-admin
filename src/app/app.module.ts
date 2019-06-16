@@ -26,7 +26,7 @@ export const defaultLocale = {
     AdminCommonModule,
     TranslateModule.forRoot()
   ],
-  providers: [],
+  providers: [defaultLocale],
   bootstrap: [AppComponent]
 })
 export class AppModule {
