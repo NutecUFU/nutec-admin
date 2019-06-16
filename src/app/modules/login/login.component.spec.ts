@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { AdminCommonModule } from 'src/app/common/admin-common.module';
 
+import { FakeLoader } from './../../common/utils/unit-tests/FakeLoader';
 import { LoginComponent } from './login.component';
 
 describe('LoginComponent', () => {
@@ -10,7 +12,12 @@ describe('LoginComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
-      imports: [AdminCommonModule]
+      imports: [
+        AdminCommonModule,
+        TranslateModule.forRoot({
+          loader: { provide: TranslateLoader, useClass: FakeLoader }
+        })
+      ]
     })
     .compileComponents();
   }));

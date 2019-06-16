@@ -12,7 +12,7 @@ import { LoginRoutingModule } from './login.routing';
     CommonModule,
     LoginRoutingModule,
     AdminCommonModule,
-    TranslateModule.forChild(),
+    TranslateModule.forChild()
   ]
 })
 export class LoginModule { }
