@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { AdminCommonModule } from './../../../admin-common.module';
 import { FormInputComponent } from './form-input.component';
 
 describe('FormInputComponent', () => {
@@ -8,7 +9,8 @@ describe('FormInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormInputComponent ]
+      declarations: [],
+      imports: [AdminCommonModule]
     })
     .compileComponents();
   }));

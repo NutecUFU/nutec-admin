@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { Router } from '@angular/router';
-import { By } from '@angular/platform-browser';
 import { NgZone } from '@angular/core';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { NotFoundComponent } from './not-found.component';
 
@@ -34,7 +34,6 @@ describe('NotFoundComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-    expect(fixture).toMatchSnapshot();
   });
 
   it('should show not found link', fakeAsync(() => {
