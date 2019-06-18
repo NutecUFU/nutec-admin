@@ -1,6 +1,7 @@
 FROM node:10.15 as build
 WORKDIR /usr/src/app
 COPY package.json ./
+RUN yarn cache clean
 RUN yarn global add @angular/cli
 RUN yarn
 COPY . ./
