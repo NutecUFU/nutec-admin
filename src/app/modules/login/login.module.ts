@@ -7,7 +7,6 @@ import { AdminCommonModule } from 'src/app/common/admin-common.module';
 
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login.routing';
-import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -18,7 +17,6 @@ import { LoginService } from './services/login.service';
     TranslateModule.forChild(),
     ReactiveFormsModule,
     HttpClientModule
-  ],
-  providers: [LoginService]
+  ]
 })
 export class LoginModule { }

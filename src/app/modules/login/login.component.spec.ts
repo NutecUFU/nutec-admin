@@ -5,9 +5,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { AdminCommonModule } from 'src/app/common/admin-common.module';
 
+import { AuthService } from '../../core/services/auth.service';
 import { FakeLoader } from './../../common/utils/unit-tests/FakeLoader';
 import { LoginComponent } from './login.component';
-import { LoginService } from './services/login.service';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -26,7 +26,7 @@ describe('LoginComponent', () => {
           loader: { provide: TranslateLoader, useClass: FakeLoader }
         })
       ],
-      providers: [LoginService]
+      providers: [AuthService]
     })
     .compileComponents();
   }));

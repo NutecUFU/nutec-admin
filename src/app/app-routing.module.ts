@@ -1,9 +1,18 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
+import { AuthGuard } from './core/guards/auth.guard';
 
 const appRoutes: Routes = [
-  { path: 'login', loadChildren: './modules/login/login.module#LoginModule' },
-  { path: '**', loadChildren: './modules/not-found/not-found.module#NotFoundModule' }
+  {
+    path: 'login',
+    loadChildren: './modules/login/login.module#LoginModule'
+  },
+  {
+    path: '**',
+    loadChildren: './modules/not-found/not-found.module#NotFoundModule',
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

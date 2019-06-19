@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { saveUserAuth } from 'src/app/common/utils/auth';
 
-import { Login } from './interfaces/login.interface';
-import { LoginService } from './services/login.service';
+import { AuthPayload } from '../../core/interfaces/login.interface';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -20,8 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService,
-    private router: Router
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -32,11 +29,14 @@ export class LoginComponent implements OnInit {
     this.isSubmitted = true;
     if (this.loginForm.valid) {
       const loginPayload = this.createLoginPayload();
-      this.loginService.login(loginPayload)
+      this.authService.auth(loginPayload)
         .subscribe(
           token => {
-            saveUserAuth(token);
-            this.router.navigate(['']);
+            if (this.authService.setUserToken(token)) {
+              this.authService.navigate();
+            } else {
+              /* Printar msg de erro! */
+            }
           },
           err => console.log(err)
         );
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  private createLoginPayload(): Login {
+  private createLoginPayload(): AuthPayload {
     return {
       ...this.loginForm.value
     };
