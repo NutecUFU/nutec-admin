@@ -1,0 +1,21 @@
+<div class="form-group item_form" [formGroup]="formGroup">
+  <app-form-label
+    *ngIf="label"
+    [ngClass]="{'error': isInvalid}"
+    label="{{ label }}"
+  ></app-form-label>
+
+  <input
+    name="{{ name }}"
+    formControlName="{{ name }}"
+    placeholder="{{ placeHolder }}"
+    class="form-control item_form--input"
+    [ngClass]="{
+      'error': isInvalid,
+      'disabled': isDisabled
+    }"
+    type="{{ typeInput || 'text' }}"
+    [attr.disabled]="isDisabled"
+  />
+  <ng-content></ng-content>
+</div>

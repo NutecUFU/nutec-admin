@@ -1,0 +1,9 @@
+.login {
+  &__card {
+    min-width: 40%;
+
+    @media screen and (max-width: 960px) {
+      min-width: 60%;
+    }
+  }
+}

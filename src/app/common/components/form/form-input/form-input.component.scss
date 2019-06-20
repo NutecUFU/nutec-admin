@@ -1,0 +1,8 @@
+.item_form {
+    &--input {
+        &.error {
+            border: 1px solid red;
+            color: red;
+        }
+    }
+}

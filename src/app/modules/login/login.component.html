@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center align-items-center h-100 login">
+  <app-card class="login__card" classes="card__border-top primary">
+      <h1 class="text-center mb-3">
+        {{ "LOGIN.FORM_TITLE" | translate }}
+      </h1>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <app-form-input
+          label="{{ 'LOGIN.EMAIL' | translate }}"
+          placeHolder="{{ 'LOGIN.EXAMPLE_EMAIL' | translate }}"
+          typeInput="email"
+          name="email"
+          [isInvalid]="isSubmitted && formControl['email'].errors"
+          [formGroup]="loginForm"
+        >
+          <div *ngIf="isSubmitted && formControl['email'].errors" class="invalid-feedback d-block">
+            <p>{{ "LOGIN.EMAIL_ERROR" | translate }}</p>
+          </div>
+        </app-form-input>
+          
+        <app-form-input
+          label="{{ 'LOGIN.PASSWORD' | translate }}"
+          placeHolder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}"
+          typeInput="password"
+          name="password"
+          [isInvalid]="isSubmitted && formControl['password'].errors"
+          [formGroup]="loginForm"
+        >
+          <div class="d-flex justify-content-end">
+            <div 
+              *ngIf="isSubmitted && formControl['password'].errors"
+              class="invalid-feedback d-block"
+            >
+              <p>{{ "LOGIN.INPUT_ERROR" | translate }}</p>
+            </div>
+            <a href="#" class="form-text small text-muted">
+              {{ "LOGIN.FORGOT_PASSWORD" | translate }}
+            </a>
+          </div>
+        </app-form-input>
+
+        <app-button
+          classes="btn-lg btn-block btn-primary mb-3"
+          [type]="'submit'"
+        >
+          {{ "LOGIN.BUTTON_SIGN_IN" | translate }}
+        </app-button>
+
+        <p class="text-center">
+          <small class="text-mutted text-center">
+            {{ 'LOGIN.NOT_HAVE_ACOUNT' | translate }}
+            <a routerLink="/register">
+              {{ 'LOGIN.REGISTER' | translate }}
+            </a>
+          </small>
+        </p>
+      </form>
+  </app-card>
+</div>
