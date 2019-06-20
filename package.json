@@ -6,7 +6,7 @@
     "start": "ng serve",
     "dev": "ng serve --configuration=dev",
     "build": "ng build",
-    "build:prod": "ng build --base-href=/admin/",
+    "build:dev": "ng build --base-href=/admin/ --configuration=dev",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch --verbose=false",
