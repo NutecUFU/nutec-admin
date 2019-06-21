@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { AdminCommonModule } from 'src/app/common/admin-common.module';
 
-import { NotFoundRoutingModule } from './not-found.routing';
 import { NotFoundComponent } from './not-found.component';
+import { NotFoundRoutingModule } from './not-found.routing';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { NotFoundComponent } from './not-found.component';
   ],
   imports: [
     CommonModule,
+    AdminCommonModule,
     NotFoundRoutingModule
   ]
 })

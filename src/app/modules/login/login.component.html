@@ -13,7 +13,7 @@
           [formGroup]="loginForm"
         >
           <div *ngIf="isSubmitted && formControl['email'].errors" class="invalid-feedback d-block">
-            <p>{{ "LOGIN.EMAIL_ERROR" | translate }}</p>
+            <p>{{ "LOGIN.ERRORS.EMAIL_ERROR" | translate }}</p>
           </div>
         </app-form-input>
           
@@ -30,7 +30,7 @@
               *ngIf="isSubmitted && formControl['password'].errors"
               class="invalid-feedback d-block"
             >
-              <p>{{ "LOGIN.INPUT_ERROR" | translate }}</p>
+              <p>{{ "LOGIN.ERRORS.INPUT_ERROR" | translate }}</p>
             </div>
             <a href="#" class="form-text small text-muted">
               {{ "LOGIN.FORGOT_PASSWORD" | translate }}

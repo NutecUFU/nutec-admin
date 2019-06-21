@@ -2,6 +2,7 @@ import { NgZone } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AdminCommonModule } from 'src/app/common/admin-common.module';
 
 import { NotFoundComponent } from './not-found.component';
 
@@ -15,6 +16,7 @@ describe('NotFoundComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ NotFoundComponent ],
       imports: [
+        AdminCommonModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: NotFoundComponent }
         ])

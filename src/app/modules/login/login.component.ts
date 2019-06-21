@@ -1,5 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpStatusCode } from 'src/app/common/enums/http-status-code.enum';
+import { ToastrService } from 'src/app/common/services/toastr.service';
 
 import { AuthPayload } from '../../core/interfaces/login.interface';
 import { AuthService } from '../../core/services/auth.service';
@@ -18,7 +21,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastService: ToastrService
   ) { }
 
   ngOnInit() {
@@ -34,11 +38,16 @@ export class LoginComponent implements OnInit {
           token => {
             if (this.authService.setUserToken(token)) {
               this.authService.navigate();
+              this.toastService.success('Você está logado!');
             } else {
-              /* Printar msg de erro! */
+              this.toastService.error('LOGIN.ERRORS.TOKEN_ERROR');
             }
           },
-          err => console.log(err)
+          (err: HttpErrorResponse) => {
+            if (err.status === HttpStatusCode.BAD_REQUEST) {
+              this.toastService.error('LOGIN.ERRORS.INPUTS_INVALIDS');
+            }
+          }
         );
     }
   }
