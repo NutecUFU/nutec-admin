@@ -3,6 +3,7 @@ export const environment = {
   env: '',
   endpoints: {
     baseURL: '',
-    auth: ''
+    auth: '',
+    users: ''
   }
 };

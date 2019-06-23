@@ -1,4 +1,4 @@
-import { Token } from 'src/app/core/interfaces/login.interface';
+import { Token } from 'src/app/core/interfaces/auth.interface';
 
 const invalidToken = { token: '' };
 

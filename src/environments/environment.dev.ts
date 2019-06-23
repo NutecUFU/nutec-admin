@@ -6,6 +6,7 @@ export const environment = {
   env: 'DEV',
   endpoints: {
     baseURL: BASE_URL,
-    auth: `${BASE_URL}/v1/auth`
+    auth: `${BASE_URL}/v1/auth`,
+    users: `${BASE_URL}/v1/users/`
   }
 };

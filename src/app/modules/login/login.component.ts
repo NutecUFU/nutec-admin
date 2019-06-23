@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpStatusCode } from 'src/app/common/enums/http-status-code.enum';
 import { ToastrService } from 'src/app/common/services/toastr.service';
 
-import { AuthPayload } from '../../core/interfaces/login.interface';
+import { AuthPayload, Token } from '../../core/interfaces/auth.interface';
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
@@ -34,21 +34,22 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       const loginPayload = this.createLoginPayload();
       this.authService.auth(loginPayload)
-        .subscribe(
-          token => {
-            if (this.authService.setUserToken(token)) {
-              this.authService.navigate();
-              this.toastService.success('Você está logado!');
-            } else {
-              this.toastService.error('LOGIN.ERRORS.TOKEN_ERROR');
-            }
-          },
-          (err: HttpErrorResponse) => {
-            if (err.status === HttpStatusCode.BAD_REQUEST) {
-              this.toastService.error('LOGIN.ERRORS.INPUTS_INVALIDS');
-            }
-          }
-        );
+        .subscribe(this.loginSuccess, this.loginError);
+    }
+  }
+
+  private loginSuccess = (token: Token) => {
+    if (this.authService.setUserToken(token)) {
+      this.authService.navigate();
+      this.toastService.success('Você está logado!');
+    } else {
+      this.toastService.error('LOGIN.ERRORS.TOKEN_ERROR');
+    }
+  }
+
+  private loginError = (err: HttpErrorResponse) => {
+    if (err.status === HttpStatusCode.BAD_REQUEST) {
+      this.toastService.error('LOGIN.ERRORS.INPUTS_INVALIDS');
     }
   }
 

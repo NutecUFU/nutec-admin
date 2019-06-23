@@ -1,4 +1,4 @@
-const BASE_URL = 'nutec.ufu.br/api';
+const BASE_URL = 'http://localhost:8000';
 
 export const environment = {
   production: true,

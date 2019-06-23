@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "dev": "ng serve --configuration=dev",
+    "mock": "ng serve --configuration=mock",
     "build": "ng build",
     "build:dev": "ng build --base-href=/admin/ --configuration=dev",
     "test": "jest",
@@ -41,6 +42,7 @@
     "@ng-bootstrap/ng-bootstrap": "^4.1.1",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
+    "lodash": "^4.17.11",
     "ngx-toastr": "^10.0.4",
     "rxjs": "^6.3.3",
     "zone.js": "^0.8.26"
@@ -53,6 +55,7 @@
     "@angular/language-service": "^7.2.0",
     "@ngx-translate/core": "^11.0.1",
     "@types/jest": "^24.0.11",
+    "@types/lodash": "^4.14.134",
     "@types/node": "^8.9.4",
     "codelyzer": "~4.5.0",
     "husky": "^2.2.0",

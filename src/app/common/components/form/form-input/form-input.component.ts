@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./form-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FormInputComponent implements OnInit {
+export class FormInputComponent {
 
   @Input() label: string;
   @Input() placeHolder: string;
@@ -17,10 +17,8 @@ export class FormInputComponent implements OnInit {
   @Input() name: string;
   @Input() isInvalid: boolean;
   @Input() formGroup: FormGroup;
+  @Input() inputClasses: string;
+  @Input() labelClasses: string;
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

@@ -3,13 +3,11 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { saveUserAuth } from 'src/app/common/utils/auth';
-import { AuthPayload, Token } from 'src/app/core/interfaces/login.interface';
+import { AuthPayload, Token } from 'src/app/core/interfaces/auth.interface';
 import { environment } from 'src/environments/environment';
 
-import { CoreModule } from '../core.module';
-
 @Injectable({
-    providedIn: CoreModule
+    providedIn: 'root'
 })
 export class AuthService {
 

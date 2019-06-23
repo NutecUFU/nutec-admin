@@ -1,0 +1,100 @@
+<div class="d-flex justify-content-center align-items-center h-100">
+  <app-card class="register__card" classes="card__border-top primary">
+    <h1 class="text-center mb-3">
+      {{ 'REGISTER.TITLE' | translate }}
+    </h1>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-6">
+          <app-form-input
+              label="{{ 'REGISTER.FIELDS.FIRST_NAME' | translate }}"
+              placeHolder="{{ 'REGISTER.PLACEHOLDER.FIRST_NAME' | translate }}"
+              typeInput="text"
+              name="first_name"
+              [isInvalid]="isSubmitted && formControl['first_name'].errors"
+              [formGroup]="registerForm"
+            >
+              <div *ngIf="isSubmitted && formControl['first_name'].errors" class="invalid-feedback d-block">
+                <p>{{ "REGISTER.ERRORS.FIRST_NAME" | translate }}</p>
+              </div>
+            </app-form-input>
+        </div>
+        <div class="col-6">
+          <app-form-input
+            label="{{ 'REGISTER.FIELDS.LAST_NAME' | translate }}"
+            placeHolder="{{ 'REGISTER.PLACEHOLDER.LAST_NAME' | translate }}"
+            typeInput="text"
+            name="last_name"
+            [isInvalid]="isSubmitted && formControl['last_name'].errors"
+            [formGroup]="registerForm"
+          >
+            <div *ngIf="isSubmitted && formControl['last_name'].errors" class="invalid-feedback d-block">
+              <p>{{ "REGISTER.ERRORS.LAST_NAME" | translate }}</p>
+            </div>
+          </app-form-input>
+        </div>
+      </div>
+      <div>
+        <app-form-input
+          label="{{ 'REGISTER.FIELDS.EMAIL' | translate }}"
+          placeHolder="{{ 'REGISTER.PLACEHOLDER.EMAIL' | translate }}"
+          typeInput="email"
+          name="email"
+          [isInvalid]="isSubmitted && formControl['email'].errors"
+          [formGroup]="registerForm"
+        >
+          <div *ngIf="isSubmitted && formControl['email'].errors" class="invalid-feedback d-block">
+            <p>{{ "REGISTER.ERRORS.EMAIL" | translate }}</p>
+          </div>
+        </app-form-input>
+      </div>
+      
+      <div>
+        <app-form-input
+          label="{{ 'REGISTER.FIELDS.PASSWORD' | translate }}"
+          placeHolder="{{ 'REGISTER.PLACEHOLDER.PASSWORD' | translate }}"
+          typeInput="password"
+          name="password"
+          [isInvalid]="isSubmitted && formControl['password'].errors"
+          [formGroup]="registerForm"
+        >
+          <div *ngIf="isSubmitted && formControl['password'].errors" class="invalid-feedback d-block">
+            <p>{{ "REGISTER.ERRORS.PASSWORD" | translate }}</p>
+          </div>
+        </app-form-input>
+      </div>
+
+      <div class="custom-file">
+        <app-form-input
+          label="{{ selectedFile ? selectedFile?.name : 'REGISTER.FIELDS.PHOTO' | translate }}"
+          typeInput="file"
+          name="photo"
+          [isInvalid]="isSubmitted && profileControl.get('photo').errors"
+          [formGroup]="profileControl"
+          inputClasses="custom-file-input"
+          labelClasses="custom-file-label"
+          (change)="changeFile($event.target.files[0])"
+        >
+          <div *ngIf="isSubmitted && profileControl.get('photo').errors" class="invalid-feedback d-block">
+            <p>{{ "REGISTER.ERRORS.PHOTO" | translate }}</p>
+          </div>
+        </app-form-input>
+      </div>
+
+      <app-button
+        classes="btn-lg btn-block btn-primary mt-3"
+        [type]="'submit'"
+      >
+        {{ "REGISTER.BUTTON_SIGN_UP" | translate }}
+      </app-button>
+    </form>
+    <p class="text-center mt-4">
+      <small class="text-mutted text-center">
+        {{ 'REGISTER.HAVE_ACOUNT' | translate }}
+        <a routerLink="/login">
+          {{ 'REGISTER.LOGIN_MESSAGE' | translate }}
+        </a>
+      </small>
+    </p>
+  </app-card>
+</div>

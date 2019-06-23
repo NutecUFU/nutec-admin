@@ -3,13 +3,14 @@
     *ngIf="label"
     [ngClass]="{'error': isInvalid}"
     label="{{ label }}"
+    class="{{ labelClasses }}"
   ></app-form-label>
 
   <input
     name="{{ name }}"
     formControlName="{{ name }}"
     placeholder="{{ placeHolder }}"
-    class="form-control item_form--input"
+    class="form-control item_form--input {{ inputClasses }}"
     [ngClass]="{
       'error': isInvalid,
       'disabled': isDisabled

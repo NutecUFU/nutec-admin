@@ -65,6 +65,14 @@
                 }
               ],
               "aot": true
+            },
+            "mock": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.mock.ts"
+                }
+              ]
             }
           }
         },
@@ -79,6 +87,9 @@
             },
             "dev": {
               "browserTarget": "nutec-admin:build:dev"
+            },
+            "mock": {
+              "browserTarget": "nutec-admin:build:mock"
             }
           }
         },

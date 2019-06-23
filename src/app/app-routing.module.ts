@@ -9,6 +9,10 @@ const appRoutes: Routes = [
     loadChildren: './modules/login/login.module#LoginModule'
   },
   {
+    path: 'register',
+    loadChildren: './modules/register/register.module#RegisterModule'
+  },
+  {
     path: '**',
     loadChildren: './modules/not-found/not-found.module#NotFoundModule',
     canActivate: [AuthGuard]
