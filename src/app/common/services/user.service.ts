@@ -5,7 +5,9 @@ import { environment } from 'src/environments/environment';
 
 import { UserPayload } from '../../core/interfaces/user.interface';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService {
 
   constructor(
