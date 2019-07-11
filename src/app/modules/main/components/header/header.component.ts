@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+  @Output() toggleSide = new EventEmitter();
 
-  ngOnInit() {
+  toggleSidebar() {
+    this.toggleSide.emit('toggle');
   }
 
 }

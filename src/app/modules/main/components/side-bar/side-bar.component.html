@@ -1,14 +1,22 @@
-<div class="sidebar">
+<div
+  class="sidebar"
+  [ngClass]="{ 'open': isOpen }"
+>
   <div class="sidebar_logo">
     <img src="/assets/images/logo-n.png"/>
     <div class="sidebar_logo--span">ADMIN</div>
   </div>
 
   <ul class="sidebar_nav">
-    <li>
-      <a>
-        <i></i>
-        <span></span>
+    <li class="sidebar_nav--item" *ngFor="let item of items">
+      <a class="sidebar_nav--link" routerLink="{{ item.link }}">
+        <app-icon name="{{ item.icon }}" categorie="solid" size="small"></app-icon>
+        <span
+          class="sidebar_nav--span"
+          [ngClass]="{ 'span_open': isOpen }"
+        >
+          {{ item.title }}
+        </span>
       </a>
     </li>
   </ul>

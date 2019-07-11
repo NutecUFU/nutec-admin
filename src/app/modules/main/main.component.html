@@ -1,7 +1,10 @@
 <div>
-  <app-side-bar></app-side-bar>
-  <div>
-    <!--NAVBAR-->
+  <app-side-bar [isOpen]="isOpen"></app-side-bar>
+  <div
+    class="main"
+    [ngClass]="{'open': isOpen}"
+  >
+    <app-header (toggleSide)="toggleSidebar()"></app-header>
     <router-outlet></router-outlet>
   </div>
 </div>

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  isOpen = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleSidebar() {
+    this.isOpen = !this.isOpen;
   }
 
 }
