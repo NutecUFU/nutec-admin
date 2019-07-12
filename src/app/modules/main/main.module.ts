@@ -8,7 +8,11 @@ import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 
 @NgModule({
-  declarations: [MainComponent, HeaderComponent, SideBarComponent],
+  declarations: [
+    MainComponent,
+    HeaderComponent,
+    SideBarComponent
+  ],
   imports: [
     CommonModule,
     MainRoutingModule,

@@ -2,4 +2,10 @@
   <a class="header_menu" (click)="toggleSidebar()">
     <app-icon name="bars" categorie="solid" size="small"></app-icon>
   </a>
+
+  <div class="header_user">
+    <img class="header_user--image mr-3" src="{{user.profile.photo}}"/>
+    <span>{{ user.first_name }}</span>
+    <app-icon class="ml-2 header_user--icon" name="angle-down" categorie="solid" size="tiny"></app-icon>
+  </div>
 </div>

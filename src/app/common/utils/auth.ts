@@ -1,7 +1,5 @@
 import { Token } from 'src/app/core/interfaces/auth.interface';
 
-const invalidToken = { token: '' };
-
 export function saveUserAuth(token: Token) {
     localStorage.setItem('nc-us', JSON.stringify(token));
 }
@@ -11,7 +9,7 @@ export function getUserAuth(): Token {
     return JSON.parse(data);
 }
 
-export function getToken(): Token {
+export function getToken(): string {
     const storageData = localStorage.getItem('nc-us');
 
     if (storageData) {
@@ -20,6 +18,6 @@ export function getToken(): Token {
         return token;
     }
 
-    return invalidToken;
+    return '';
 }
 

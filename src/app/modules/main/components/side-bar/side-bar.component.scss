@@ -1,3 +1,5 @@
+@import 'src/assets/theming/variables.scss';
+
 .sidebar {
     position: absolute;
     top: 0;
@@ -5,7 +7,7 @@
     left: 0;
     z-index: 1006;
     min-width: 70px;
-    background: #008da6;
+    background: $primary;
     transition: min-width .15s;
     text-align: center;
 
