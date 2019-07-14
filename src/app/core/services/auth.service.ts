@@ -20,7 +20,7 @@ export class AuthService {
         return this.http.post<Token>(`${environment.endpoints.auth}`, payload);
     }
 
-    setUserToken(token: Token) {
+    setUserToken(token: Token): boolean {
         if (token.token !== '' && token.token !== null) {
             saveUserAuth(token);
             this.loggedIn = true;

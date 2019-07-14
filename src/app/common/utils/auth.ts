@@ -1,17 +1,18 @@
 import { Token } from 'src/app/core/interfaces/auth.interface';
-
-const invalidToken = { token: '' };
+import { UserPayload } from 'src/app/core/interfaces/user.interface';
 
 export function saveUserAuth(token: Token) {
     localStorage.setItem('nc-us', JSON.stringify(token));
 }
 
-export function getUserAuth(): Token {
+export function getUserAuth(): UserPayload {
     const data = localStorage.getItem('nc-us');
-    return JSON.parse(data);
+    const token = JSON.parse(data);
+    const { user } = token;
+    return user;
 }
 
-export function getToken(): Token {
+export function getToken(): string {
     const storageData = localStorage.getItem('nc-us');
 
     if (storageData) {
@@ -20,6 +21,6 @@ export function getToken(): Token {
         return token;
     }
 
-    return invalidToken;
+    return '';
 }
 

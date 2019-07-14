@@ -5,6 +5,11 @@ import { AuthGuard } from './core/guards/auth.guard';
 
 const appRoutes: Routes = [
   {
+    path: '',
+    loadChildren: './modules/main/main.module#MainModule',
+    canActivateChild: [ AuthGuard ]
+  },
+  {
     path: 'login',
     loadChildren: './modules/login/login.module#LoginModule'
   },
@@ -14,8 +19,7 @@ const appRoutes: Routes = [
   },
   {
     path: '**',
-    loadChildren: './modules/not-found/not-found.module#NotFoundModule',
-    canActivate: [AuthGuard]
+    loadChildren: './modules/not-found/not-found.module#NotFoundModule'
   }
 ];
 

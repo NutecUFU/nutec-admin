@@ -8,7 +8,6 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminCommonModule } from './common/admin-common.module';
 import { translations } from './common/i18n/pt-BR';
 import { CoreModule } from './core/core.module';
 
@@ -30,7 +29,6 @@ export const defaultLocale = {
       newestOnTop: true
     }),
     AppRoutingModule,
-    AdminCommonModule,
     CoreModule,
     TranslateModule.forRoot()
   ],

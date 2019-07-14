@@ -1,0 +1,74 @@
+@import 'src/assets/theming/variables.scss';
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1006;
+    min-width: 70px;
+    background: $primary;
+    transition: min-width .15s;
+    text-align: center;
+
+    &.open {
+        min-width: 240px;
+        text-align: left;
+    }
+
+    &_logo {
+        text-align: center;
+        box-shadow:inset 0 0 0 99999px rgba(0,0,0,0.1);
+        height: 64px;
+        min-width: inherit;
+        display: table-cell;
+        vertical-align: middle;
+
+        & img {
+            width: 30px;
+        }
+
+        &--span {
+            margin-top: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 10px;
+            color: #fff;
+        }
+    }
+
+    &_nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        &--item {
+            color: #fff;
+            padding: 15px 20px;
+
+            &:hover {
+                box-shadow: inset 0 0 0 99999px rgba(255,255,255,0.1);
+                cursor: pointer;
+            }
+        }
+
+        &--link {
+            text-decoration: none;
+            color: #fff;
+
+            & i {
+                font-size: 24px;
+            }
+        }
+
+        &--span {
+            padding: 0;
+            display: none;
+
+            &.span_open {
+                display: initial;
+                padding: 0 30px;
+            }
+        }
+    }
+}

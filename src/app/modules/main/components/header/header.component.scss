@@ -1,0 +1,31 @@
+@import 'src/assets/theming/variables.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    padding-left: 20px;
+    padding-right: 40px;
+    
+    &_menu {
+        line-height: 64px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &_user {
+        display: flex;
+        align-items: center;
+
+        &--image {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        &--icon {
+            color: $primary;
+        }
+    }
+}
