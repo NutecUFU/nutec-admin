@@ -1,0 +1,17 @@
+<div ngbDropdown>
+  <div ngbDropdownToggle id="dropdownUser">
+    <img class="header_user--image mr-3" src="{{user?.profile.photo}}"/>
+    <span>{{ user?.first_name }}</span>
+  </div>
+
+  <div ngbDropdownMenu aria-labelledby="dropdownUser">
+    <a ngbDropdownItem class="user-dropdown_menu--item">
+      <app-icon
+        name="sign-out-alt"
+        categories="solid"
+        size="tiny"
+      ></app-icon>
+      logout
+    </a>
+  </div>
+</div>

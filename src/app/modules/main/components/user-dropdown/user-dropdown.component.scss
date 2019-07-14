@@ -1,0 +1,14 @@
+@import 'src/assets/theming/variables.scss';
+
+.user-dropdown {
+
+    &_menu {
+        &--item {
+            cursor: pointer;
+
+            &:hover {
+                color: $primary !important;
+            }
+        }
+    }
+}

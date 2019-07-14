@@ -1,12 +1,14 @@
 import { Token } from 'src/app/core/interfaces/auth.interface';
+import { UserPayload } from 'src/app/core/interfaces/user.interface';
 
 export function saveUserAuth(token: Token) {
     localStorage.setItem('nc-us', JSON.stringify(token));
 }
 
-export function getUserAuth(): Token {
+export function getUserAuth(): UserPayload {
     const data = localStorage.getItem('nc-us');
-    return JSON.parse(data);
+    const token = JSON.parse(data);
+    return token.user;
 }
 
 export function getToken(): string {

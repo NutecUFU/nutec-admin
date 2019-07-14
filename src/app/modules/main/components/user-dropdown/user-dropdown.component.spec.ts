@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AdminCommonModule } from 'src/app/common/admin-common.module';
 
-import { UserDropdownComponent } from '../user-dropdown/user-dropdown.component';
-import { HeaderComponent } from './header.component';
+import { UserDropdownComponent } from './user-dropdown.component';
 
 const mockUser = {
   profile: {
@@ -10,9 +9,9 @@ const mockUser = {
   }
 };
 
-describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+describe('UserDropdownComponent', () => {
+  let component: UserDropdownComponent;
+  let fixture: ComponentFixture<UserDropdownComponent>;
 
   beforeAll(() => {
     localStorage.setItem('nc-us', JSON.stringify(mockUser));
@@ -20,14 +19,14 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent, UserDropdownComponent ],
-      imports: [AdminCommonModule]
+      declarations: [ UserDropdownComponent ],
+      imports: [ AdminCommonModule ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(UserDropdownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

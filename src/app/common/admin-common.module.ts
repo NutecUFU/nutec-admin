@@ -7,6 +7,7 @@ import { CardComponent } from './components/card/card.component';
 import { FormInputComponent } from './components/form/form-input/form-input.component';
 import { FormLabelComponent } from './components/form/form-label/form-label.component';
 import { IconComponent } from './components/icon/icon.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   imports: [
@@ -19,14 +20,16 @@ import { IconComponent } from './components/icon/icon.component';
     FormInputComponent,
     FormLabelComponent,
     ButtonComponent,
-    IconComponent
+    IconComponent,
+    SpinnerComponent
   ],
   exports: [
     CardComponent,
     FormInputComponent,
     FormLabelComponent,
     ButtonComponent,
-    IconComponent
+    IconComponent,
+    SpinnerComponent
   ]
 })
 export class AdminCommonModule { }

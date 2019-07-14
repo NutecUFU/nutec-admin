@@ -10,12 +10,16 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        children: [
-          {
-            path: '',
-            loadChildren: '../dashboard/dashboard.module#DashboardModule'
-          }
-        ]
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
+      {
+        path: 'dashboard',
+        loadChildren: '../dashboard/dashboard.module#DashboardModule'
+      },
+      {
+        path: 'users',
+        loadChildren: '../user/user.module#UserModule'
       }
     ]
   }

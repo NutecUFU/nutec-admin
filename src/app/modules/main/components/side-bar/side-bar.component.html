@@ -8,8 +8,8 @@
   </div>
 
   <ul class="sidebar_nav">
-    <li class="sidebar_nav--item" *ngFor="let item of items">
-      <a class="sidebar_nav--link" routerLink="{{ item.link }}">
+    <a class="sidebar_nav--link" *ngFor="let item of items" routerLink="{{ item.link }}">
+      <li class="sidebar_nav--item" >
         <app-icon name="{{ item.icon }}" categorie="solid" size="small"></app-icon>
         <span
           class="sidebar_nav--span"
@@ -17,7 +17,7 @@
         >
           {{ item.title }}
         </span>
-      </a>
-    </li>
+      </li>
+    </a>
   </ul>
 </div>
