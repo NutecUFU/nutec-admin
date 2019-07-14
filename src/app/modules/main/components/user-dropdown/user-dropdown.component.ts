@@ -11,8 +11,6 @@ export class UserDropdownComponent implements OnInit {
 
   user: UserPayload;
 
-  constructor() { }
-
   ngOnInit() {
     this.user = getUserAuth();
   }

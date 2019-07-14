@@ -8,7 +8,8 @@ export function saveUserAuth(token: Token) {
 export function getUserAuth(): UserPayload {
     const data = localStorage.getItem('nc-us');
     const token = JSON.parse(data);
-    return token.user;
+    const { user } = token;
+    return user;
 }
 
 export function getToken(): string {

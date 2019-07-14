@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { SIDEBAR_ITENS } from '../../constants/sidebar-itens';
 
@@ -7,15 +7,10 @@ import { SIDEBAR_ITENS } from '../../constants/sidebar-itens';
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss']
 })
-export class SideBarComponent implements OnInit {
+export class SideBarComponent {
 
   items = SIDEBAR_ITENS;
 
   @Input() isOpen: boolean;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }
