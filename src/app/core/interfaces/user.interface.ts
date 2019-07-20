@@ -1,3 +1,10 @@
+export interface AllUsers {
+    count: number;
+    next: string;
+    previous: string;
+    results: UserPayload[];
+}
+
 export interface UserPayload {
     id?: number;
     email: string;

@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
   @Input() classes: string;
+  @Input() isHoverShadow: boolean;
 }

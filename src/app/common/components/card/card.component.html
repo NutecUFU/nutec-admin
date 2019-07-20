@@ -1,4 +1,7 @@
-<div class="card {{classes}}">
+<div
+  class="card {{classes}}"
+  [ngClass]="{ 'card-shadow': isHoverShadow }"
+>
   <div class="card-body">
     <ng-content></ng-content>
   </div>

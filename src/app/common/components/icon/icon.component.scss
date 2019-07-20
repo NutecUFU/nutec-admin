@@ -1,4 +1,6 @@
 .icon {
+    transition: font-size .3s;
+
     &_tiny {
         font-size: 18px;
     }

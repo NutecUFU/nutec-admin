@@ -1,7 +1,9 @@
 @import './assets/theming/variables.scss';
 
 $theme-colors: (
-  "primary": $primary
+  "primary": $primary,
+  "venetian-red": $color-venetian-red,
+  "success": $color-success,
 );
 
 body {

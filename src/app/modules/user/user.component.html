@@ -1,3 +1,18 @@
-<p>
-  user works!
-</p>
+<div class="user">
+  <div>
+    <div class="w-100">
+      <input class="form-control" type="text" placeholder="Pesquisar" />
+
+      <div class="d-flex justify-content-center">
+        <app-spinner *ngIf="!users"></app-spinner>
+      </div>
+
+      <div class="row user_list">
+        <div class="col-3 mb-3" *ngFor="let user of users">
+          <app-user-card [user]="user" >
+          </app-user-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
