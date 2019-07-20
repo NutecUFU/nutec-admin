@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { AdminCommonModule } from 'src/app/common/admin-common.module';
 
 import { UserCardComponent } from './user-card.component';
 
@@ -8,7 +9,8 @@ describe('UserCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserCardComponent ]
+      declarations: [ UserCardComponent ],
+      imports: [AdminCommonModule]
     })
     .compileComponents();
   }));

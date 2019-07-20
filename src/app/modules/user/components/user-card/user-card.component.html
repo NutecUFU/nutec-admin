@@ -22,13 +22,13 @@
       <app-icon categorie="solid" name="graduation-cap" size="{{ isShowLink ? 'small': 'tiny'}}"></app-icon>
     </a>
   </div>
-  <div *ngIf="!user.is_active">
+  <div *ngIf="!user?.is_active">
     <a href="#" class="user-card_lock">
       <app-icon categorie="solid" name="user-lock" size="{{ isShowLink ? 'small': 'tiny'}}"></app-icon>
     </a>
   </div>
 
-  <div *ngIf="user.is_active" class="user-card_check">
+  <div *ngIf="user?.is_active" class="user-card_check">
     <app-icon categorie="solid" name="check" size="{{ isShowLink ? 'small': 'tiny'}}"></app-icon>
   </div>
 
