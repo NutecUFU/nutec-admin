@@ -488,6 +488,13 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
+"@netbasal/ngx-content-loader@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@netbasal/ngx-content-loader/-/ngx-content-loader-3.0.0.tgz#398b72388fb8e9861bf6e36ec1f8f6330d209d8f"
+  integrity sha512-NOVmB6vmWzdpaHFBHw8DLEsDarr/CiEhPdo5Vjl9KffPFOphM+9ZNYKJ3y8uonJw64WAjkL2WR06ToKDrA2Dug==
+  dependencies:
+    tslib "^1.9.0"
+
 "@ng-bootstrap/ng-bootstrap@^4.1.1":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-4.2.1.tgz#aa87f2ee6c4def0be087d4f456930b1e0761d91a"
